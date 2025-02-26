@@ -1,17 +1,11 @@
-from gpiozero import LED
-from time import sleep
+import gpiozero  # A GPIO könyvtár a Raspberry Pi-hez
+import time      # Lehetővé teszi a Python számára az időzítést
 
-# LED beállítása
-led = LED(17)  # LED a 17-es GPIO lábon
+led = gpiozero.LED(17) # Referencia a 17-es GPIO-hoz
 
-# Főprogram
 while True:
-    # LED bekapcsolása
-    led.on()
-    print("LED világít")
-    sleep(5)  # 5 másodpercig világít
+    led.on()       # A LED felkapcsolása
+    time.sleep(5)  # 5 másodpercig világít
 
-    # LED kikapcsolása
-    led.off()
-    print("LED nem világít")
-    sleep(5)  # 5 másodpercig sötét van
+    led.off()      # A LED lekapcsolása
+    time.sleep(5)  # 5 másodpercig sötét van
